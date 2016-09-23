@@ -1,3 +1,4 @@
+<img src="https://travis-ci.org/IgorShulga/GreetingMessage.svg?branch=master">
 #Greets the user program in the console depending on the current time
 English</br>
 Write a console application on java, using maven.
