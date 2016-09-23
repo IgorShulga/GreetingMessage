@@ -1,5 +1,5 @@
 #Greets the user program in the console depending on the current time
-English
+English</br>
 Write a console application on java, using maven.
 The application should display a welcome message, depending on the current time of day.
 
@@ -11,7 +11,7 @@ Good night, World! 23:00 - 06:00
 The code should include all possible unit tests and generate a readable log file.
 Messages output to the console must be obtained from the message resource and depend on the user's system locale. Make a translation into Russian.
 
-Russian
+Russian</br>
 Написать консольное приложение на java, с использованием maven.
 Приложение должно выводить на экран приветственное сообщение, в зависимости от текущего времени суток.
 
