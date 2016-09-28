@@ -1,6 +1,6 @@
-language: java
-sudo: false
-script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+#language: java
+#sudo: false
+#script: mvn clean verify
 #language: java
 #os:
 #  - linux
@@ -56,3 +56,12 @@ script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 #  "group": "stable",
 #  "dist": "precise"
 #}
+
+{
+  "language": "java",
+  "sudo": false,
+  "script": "mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V",
+  "group": "stable",
+  "dist": "precise",
+  "os": "linux"
+}
