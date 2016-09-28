@@ -18,13 +18,13 @@ public abstract class Message {
 //    address (ADDRESSEE - World) and end of line ( END_LINE - !)
     public String getGreetingMessage(){
 
-        Locale.getDefault();
+//        Locale.getDefault();
         
         StringBuilder message = new StringBuilder();
-        message.append(ResourceBundle.getBundle(BODY_MESSAGES).getString(getAddressee()))
+        message.append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()).getString(getAddressee()))
                 .append(", ")
-                .append(ResourceBundle.getBundle(BODY_MESSAGES).getString(ADDRESSEE))
-                .append(ResourceBundle.getBundle(BODY_MESSAGES).getString(END_LINE));
+                .append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()).getString(ADDRESSEE))
+                .append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()).getString(END_LINE));
         return message.toString();
     }
 

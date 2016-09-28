@@ -1,8 +1,6 @@
 package igorshulga;
 
-import igorshulga.Messages.Message;
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
