@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.util.Locale;
 
-import static junit.framework.Assert.assertEquals;
 
 /**
  * Created by igor on 28.09.16.
@@ -27,7 +26,6 @@ public class GreetingCreationTest extends TestCase {
 
     //    testing night message (from 23 to 24 hours)
     public void testNightMessageOne() throws Exception {
-        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         String lang = Locale.getDefault().getLanguage();
@@ -45,7 +43,6 @@ public class GreetingCreationTest extends TestCase {
     
 //    testing morning message (from 6 to 9 hours)
     public void testMorningMessage() throws Exception {
-        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         String lang = Locale.getDefault().getLanguage();
@@ -62,7 +59,6 @@ public class GreetingCreationTest extends TestCase {
 
 //    testing day message (from 9 to 19 hours)
     public void testDayMessage() throws Exception {
-        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         String lang = Locale.getDefault().getLanguage();
@@ -79,7 +75,6 @@ public class GreetingCreationTest extends TestCase {
 
 //    testing evening message (from 19 to 23 hours)
     public void testEveningMessage() throws Exception {
-        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         String lang = Locale.getDefault().getLanguage();
