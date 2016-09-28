@@ -29,6 +29,7 @@ public abstract class Message {
     }
 
     public abstract String getAddressee();
+    
     public void printMessage() {
         System.out.println(getGreetingMessage());
     }

@@ -5,17 +5,14 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Locale;
-import java.util.ResourceBundle;
+
+import static junit.framework.Assert.assertEquals;
 
 /**
  * Created by igor on 28.09.16.
  * Test checks each hour of the 24 hours (step 1 minute) and the mistaken time
  */
 public class GreetingCreationTest extends TestCase {
-
-    private static final String BODY_MESSAGES = "messages";
-    private static final String ADDRESSEE = "addressee";
-    private static final String END_LINE = "endLine";
 
     private static final float MORNING = 6f;
     private static final float DAY= 9f;
@@ -33,16 +30,16 @@ public class GreetingCreationTest extends TestCase {
         Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
+        String lang = Locale.getDefault().getLanguage();
         float[] testTime = {NIGHT, NIGHT+ONE_MINUTE, MIDNIGHT_24-ONE_MINUTE, MIDNIGHT_24,
                 MIDNIGHT_0, MIDNIGHT_0+ONE_MINUTE, MORNING-ONE_MINUTE};
         for(int i = 0; i < testTime.length; i++){
             resultTest = greetingCreation.getMessage(testTime[i]).getGreetingMessage();
-            StringBuilder message = new StringBuilder();
-            message.append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()))
-                    .append(", ")
-                    .append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()).getString(ADDRESSEE))
-                    .append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()).getString(END_LINE));
-            Assert.assertEquals(message, resultTest);
+            if (lang.equals("en")) {
+                assertEquals("Good night, World!", resultTest);
+            } else if (lang.equals("ru")) {
+                assertEquals("Доброй ночи, Мир!", resultTest);
+            } 
         }
     }
     
