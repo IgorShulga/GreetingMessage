@@ -1,4 +1,4 @@
-# this is a java project using maven
 language: java
-# install
+sudo: false
+jdk: oraclejdk8 
 install: mvn clean test
