@@ -87,7 +87,7 @@ public class GreetingCreationTest extends TestCase {
         for(int i = 0; i < testTime.length; i++){
             resultTest = greetingCreation.getMessage(testTime[i]).getGreetingMessage();
             if (lang.equals("en")) {
-                assertEquals("Good day, World!", resultTest);
+                assertEquals("Good evening, World!", resultTest);
             } else if (lang.equals("ru")) {
                 assertEquals("Добрый вечер, Мир!", resultTest);
             }
