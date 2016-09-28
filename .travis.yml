@@ -2,7 +2,7 @@ language: java
 sudo: false
 jdk: oraclejdk8
 install: true
-script: mvn -V -e -fae -B clean - mvn -V -e -fae -B verify
+script: mvn -V -e -fae -B clean - mvn -V -e -fae -B install
 cache:
   directories:
-    - '$HOME/.m2/repository/TestApp'
+    - '$HOME/.m2/repository'
