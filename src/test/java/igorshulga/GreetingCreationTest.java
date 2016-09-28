@@ -4,6 +4,8 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Locale;
+
 /**
  * Created by igor on 28.09.16.
  * Test checks each hour of the 24 hours (step 1 minute) and the mistaken time
@@ -23,6 +25,7 @@ public class GreetingCreationTest extends TestCase {
 
     //    testing night message (from 23 to 24 hours)
     public void testNightMessageOne() throws Exception {
+        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         float[] testTime = {NIGHT, NIGHT+ONE_MINUTE, MIDNIGHT_24-ONE_MINUTE, MIDNIGHT_24,
@@ -35,6 +38,7 @@ public class GreetingCreationTest extends TestCase {
     
 //    testing morning message (from 6 to 9 hours)
     public void testMorningMessage() throws Exception {
+        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         float[] testTime = {MORNING, MORNING+ONE_MINUTE, MORNING+30*ONE_MINUTE, DAY-ONE_MINUTE};
@@ -46,6 +50,7 @@ public class GreetingCreationTest extends TestCase {
 
 //    testing day message (from 9 to 19 hours)
     public void testDayMessage() throws Exception {
+        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         float[] testTime = {DAY, DAY+ONE_MINUTE, DAY+120*ONE_MINUTE, EVENING-ONE_MINUTE};
@@ -57,6 +62,7 @@ public class GreetingCreationTest extends TestCase {
 
 //    testing evening message (from 19 to 23 hours)
     public void testEveningMessage() throws Exception {
+        Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
         float[] testTime = {EVENING, EVENING+ONE_MINUTE, NIGHT-18*ONE_MINUTE, NIGHT-ONE_MINUTE};
