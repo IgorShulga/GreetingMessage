@@ -1,18 +1,5 @@
 language: java
-
 sudo: false
-
-env:
-  global:
-    - secure: "ZUWmLfRxoNhxg6YQDRirZYHcv7OH6EKpgQJpRWoxsF1MMNTlnH7XMkiev3d0J5lppe00gi8Guf90XNGHcfe9X/125cYiMQSjRRt6PkiYL8og8+lip4HDfihuXN2h6BcRrBZ7dm5izeSGVzw0GEg0yyav0oqoqLpyzQaZssjXgDY="
-
-script: mvn test -f ./source/pom.xml 
-#mvn -V -e -fae -B clean - mvn -V -e -fae -B install
-  
-
-jdk:
-  - oraclejdk8
-
-cache:
-  directories:
-  - $HOME/.m2
+jdk: oraclejdk8
+install: true
+script: mvn -V -e -fae -B clean - mvn -V -e -fae -B verify
