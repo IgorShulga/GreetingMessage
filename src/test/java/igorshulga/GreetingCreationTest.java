@@ -5,12 +5,17 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * Created by igor on 28.09.16.
  * Test checks each hour of the 24 hours (step 1 minute) and the mistaken time
  */
 public class GreetingCreationTest extends TestCase {
+
+    private static final String BODY_MESSAGES = "messages";
+    private static final String ADDRESSEE = "addressee";
+    private static final String END_LINE = "endLine";
 
     private static final float MORNING = 6f;
     private static final float DAY= 9f;
@@ -32,7 +37,12 @@ public class GreetingCreationTest extends TestCase {
                 MIDNIGHT_0, MIDNIGHT_0+ONE_MINUTE, MORNING-ONE_MINUTE};
         for(int i = 0; i < testTime.length; i++){
             resultTest = greetingCreation.getMessage(testTime[i]).getGreetingMessage();
-            Assert.assertEquals("Доброй ночи, Мир!", resultTest);
+            StringBuilder message = new StringBuilder();
+            message.append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()))
+                    .append(", ")
+                    .append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()).getString(ADDRESSEE))
+                    .append(ResourceBundle.getBundle(BODY_MESSAGES, Locale.getDefault()).getString(END_LINE));
+            Assert.assertEquals(message, resultTest);
         }
     }
     
