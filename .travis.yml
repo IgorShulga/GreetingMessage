@@ -1,6 +1,6 @@
 language: java
 sudo: false
-script: mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -P
+script: mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 #language: java
 #os:
 #  - linux
