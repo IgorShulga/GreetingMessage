@@ -48,10 +48,15 @@ public class GreetingCreationTest extends TestCase {
         Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
+        String lang = Locale.getDefault().getLanguage();
         float[] testTime = {MORNING, MORNING+ONE_MINUTE, MORNING+30*ONE_MINUTE, DAY-ONE_MINUTE};
         for(int i = 0; i < testTime.length; i++){
             resultTest = greetingCreation.getMessage(testTime[i]).getGreetingMessage();
-            Assert.assertEquals("Доброе утро, Мир!", resultTest);
+            if (lang.equals("en")) {
+                assertEquals("Good morning, World!", resultTest);
+            } else if (lang.equals("ru")) {
+                assertEquals("Доброе утро, Мир!", resultTest);
+            }
         }
     }
 
@@ -60,10 +65,15 @@ public class GreetingCreationTest extends TestCase {
         Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
+        String lang = Locale.getDefault().getLanguage();
         float[] testTime = {DAY, DAY+ONE_MINUTE, DAY+120*ONE_MINUTE, EVENING-ONE_MINUTE};
         for(int i = 0; i < testTime.length; i++){
             resultTest = greetingCreation.getMessage(testTime[i]).getGreetingMessage();
-            Assert.assertEquals("Добрый день, Мир!", resultTest);
+            if (lang.equals("en")) {
+                assertEquals("Good day, World!", resultTest);
+            } else if (lang.equals("ru")) {
+                assertEquals("Добрый день, Мир!", resultTest);
+            }
         }
     }
 
@@ -72,10 +82,15 @@ public class GreetingCreationTest extends TestCase {
         Locale.getDefault();
         GreetingCreation greetingCreation = new GreetingCreation();
         String resultTest;
+        String lang = Locale.getDefault().getLanguage();
         float[] testTime = {EVENING, EVENING+ONE_MINUTE, NIGHT-18*ONE_MINUTE, NIGHT-ONE_MINUTE};
         for(int i = 0; i < testTime.length; i++){
             resultTest = greetingCreation.getMessage(testTime[i]).getGreetingMessage();
-            Assert.assertEquals("Добрый вечер, Мир!", resultTest);
+            if (lang.equals("en")) {
+                assertEquals("Good day, World!", resultTest);
+            } else if (lang.equals("ru")) {
+                assertEquals("Добрый вечер, Мир!", resultTest);
+            }
         }
     }
 
